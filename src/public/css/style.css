@@ -1,3 +1,73 @@
 body{
     font-family: 'Josefin Sans', sans-serif;
 }
+
+#nav-link:hover{
+    color: #CD6155 ;
+}
+
+.background-frontpage{
+    width: 100%;
+    height: 575px;
+}
+
+.img-frontpage{
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+}
+
+.img-aboutMe{
+    border-radius: 5%;
+    width: 256px;
+    height: 256px;
+}
+
+.heading-content h5{
+    font-size: 2em;
+    font-weight: 300;
+    color: white;
+}
+
+.heading-content h1{
+    font-size: 3em;
+    font-weight: bolder;
+    color: white;
+}
+
+.heading-content p{
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: lighter;
+    color: white;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+}
+
+.contact-link{
+    color: white;
+}
+
+.contact-link:hover{
+    text-decoration: none;
+    color: #CD6155 ;
+}
+
+.project-sobresalir{
+    overflow:hidden;
+    transform: scale(1.0);
+    transition: 0.6s;   
+}
+
+.project-sobresalir:hover{
+    box-shadow: 3px 3px 2px #CD6155;    
+    filter: saturate(180%);
+    -webkit-transform:scale(0.9);
+    transform:scale(0.9);
+    transition: 0.6s;
+}
+
+.img-card{
+    width: 84px;
+    height: 84px;
+}
