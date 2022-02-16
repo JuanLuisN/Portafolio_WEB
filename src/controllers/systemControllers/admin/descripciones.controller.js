@@ -12,8 +12,9 @@ controller.renderDescripciones = async (req, res) => {
 }
 
 controller.saveDescripcion = async (req, res) => {
-    const { descripcion } = req.body
+    const { imagen, descripcion } = req.body
     const newDescripcion = {
+        imagen,
         descripcion
     }
     try {
@@ -28,13 +29,14 @@ controller.saveDescripcion = async (req, res) => {
 
 controller.editDescripcion = async (req, res) => {
     const { id } = req.params
-    const { descripcion } = req.body
+    const { imagen, descripcion } = req.body
     const newDescripcion = {
+        imagen,
         descripcion
     }
     try {
-        await connection.query('update descripciones set descripcion = ? where id = ?', 
-            [newDescripcion.descripcion, id])
+        await connection.query('update descripciones set imagen = ?, descripcion = ? where id = ?', 
+            [newDescripcion.imagen, newDescripcion.descripcion, id])
         req.flash('success_msg', 'Se actualizo la descripción con exito')
         res.redirect(redirectPath)
     } catch (error) {

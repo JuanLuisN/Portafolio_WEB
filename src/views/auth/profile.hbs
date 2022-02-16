@@ -1,0 +1,21 @@
+<div class="container p-4">
+    <div class="row justify-content-md-center align-items-center">
+        <div class="col col-md-4 mx-center">
+            <div class="card shadow text-center">
+                <div class="card-header mt-2">
+                    <span class="h4">Perfil</span>
+                </div>
+                <div class="card-body">
+                    <p>Nombre completo: <span class="text-muted">{{user.fullname}}</span></p>
+                    <p>Correo electronico: <span class="text-muted">{{user.email}}</span></p>
+                    <hr>
+                    {{#each profile}}
+                    <button type="button" data-toggle="modal" data-target="#editProfileModal{{profile}}"
+                        class="btn btn-success px-3"><i class="fas fa-address-card"></i> Editar perfil</button>
+                    {{>adminPartials/profileModals/editProfileModal}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -29,9 +29,10 @@ body{
 }
 
 .img-aboutMe{
+    width: 300px;
+    height: 300px;
     border-radius: 5%;
-    width: 256px;
-    height: 256px;
+    box-shadow: 3px 3px 2px #CD6155;
 }
 
 .heading-content h5{
@@ -79,6 +80,7 @@ body{
 }
 
 .img-card{
+    border-radius: 50%;
     width: 84px;
     height: 84px;
 }
