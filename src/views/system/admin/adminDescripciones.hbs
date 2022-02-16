@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="pt-4">
+        <h2 class="text-center text-light">Descripciones</h2>
+        <button type="button" data-toggle="modal" data-target="#addDescripcionModal"
+            class="btn btn-light btn-block btn-sm mt-3">
+            <i class="fas fa-plus"></i> <strong>Agregar descripcion</strong>
+        </button>
+    </div>
+    <hr class="bg-dark">
+    <div class="container">
+        <div class="row justify-content-md-center aling-items-center p-4">
+            {{#each descripciones}}
+            <div class="col col-12 mb-4">
+                <div class="card shadow text-center h-100 rounded">
+                    <div class="card-body">
+                        <p class="h6">Descripcion:</p>
+                        <p class="text-muted text-justify">
+                            {{descripcion}}
+                        </p>
+                    </div>
+                    <div class="card-footer ">
+                        <button type="button" data-toggle="modal" data-target="#editDescripcionModal{{descripciones}}"
+                            class="btn btn-success px-3"><i class="fas fa-pencil-alt"></i></button>
+                        <button type="button" data-toggle="modal" data-target="#deleteDescripcionModal{{id}}"
+                            class="btn btn-danger px-3"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+            {{>adminPartials/descripcionesModals/editDescripcionModal}}
+            {{>adminPartials/descripcionesModals/deleteDescripcionModal}}
+            {{else}}
+            <h4 class="text-center mt-4">NO HAY DESCRIPCIONES REGISTRADAS<br>
+                <small>AGREGA UNA NUEVA DESCRIPCION</small>
+            </h4>
+            {{/each}}
+        </div>
+    </div>
+</div>
+{{>adminPartials/descripcionesModals/addDescripcionModal}}

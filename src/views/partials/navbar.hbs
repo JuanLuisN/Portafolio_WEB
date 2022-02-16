@@ -7,6 +7,29 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
+            {{#if user}}
+            <li class="nav-item">
+                <a class="nav-link mr-3" id="nav-link" href="/descripciones"><i class="fas fa-id-badge"></i> Descripciones</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mr-3" id="nav-link" href="/admin/habilidades"><i class="fas fa-info"></i> Habilidades</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mr-3" id="nav-link" href="/admin/proyectos"><i class="fas fa-lightbulb"></i> Proyectos</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button"
+                    data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-user" aria-hidden="true"></i> {{user.fullname}}
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownUser">
+                    <a class="dropdown-item" id="nav-link" href="/profile"><i class="fa fa-address-book" aria-hidden="true"></i>
+                        Perfil</a>
+                    <a class="dropdown-item" id="nav-link" href="/logout"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                        Cerrar sesión</a>
+                </div>
+            </li>
+            {{else}}
             <li class="nav-item">
                 <a class="nav-link mr-3" id="nav-link" href="#"><i class="fas fa-home"></i> Inicio</a>
             </li>
@@ -15,13 +38,14 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link mr-3" id="nav-link" href="#"><i class="fas fa-lightbulb"></i> Mis habilidades</a>
-            </li> 
+            </li>
             <li class="nav-item">
                 <a class="nav-link mr-3" id="nav-link" href="#"><i class="fas fa-project-diagram"></i> Mis proyectos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link mr-3" id="nav-link"><i class="fas fa-id-badge"></i> Contacto</a>
             </li>
+            {{/if}}
         </ul>
     </div>
 

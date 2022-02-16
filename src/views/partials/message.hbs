@@ -1,0 +1,27 @@
+{{#if success_msg}}
+<script>
+    Toastify({
+        text: '{{success_msg}}',
+        className: "text-center mt-2 w-100 toast-font",
+        position: "center",
+        gravity: "top",
+        style: {
+            background: "#145A32",
+        }
+    }).showToast();
+</script>
+{{/if}}
+
+{{#if error_msg}}
+<script>
+    Toastify({
+        text: '{{error_msg}}',
+        className: "text-center mt-2 w-100 toast-font",
+        position: "center",
+        gravity: "top",
+        style: {
+            background: "#641E16",
+        }
+    }).showToast();
+</script>
+{{/if}}
