@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="pt-4">
+        <h2 class="text-center text-light">Proyectos</h2>
+        <button type="button" data-toggle="modal" data-target="#addProyectoModal"
+            class="btn btn-light btn-block btn-sm mt-3">
+            <i class="fas fa-plus"></i> <strong>Agregar proyecto</strong>
+        </button>
+    </div>
+    <hr class="bg-dark">
+    <div class="container">
+        <div class="row justify-content-md-center aling-items-center p-4">
+            {{#each proyectos}}
+            <div class="col col-12 col-sm-12 col-md-4 col-lg-4 mb-4">
+                <div class="card shadow text-center h-100 rounded">
+                    <div class="card-header">
+                        <div class="row d-flex align-items-center">
+                            <div class="col col-12 col-sm-12 col-md-4 col-lg-4">
+                                <img src="{{imagen}}"
+                                    class="img-card">
+                            </div>
+                            <div class="col col-12 col-sm-12 col-md-8 col-lg-8 mt-4">
+                                <h5 class="font-weight-bold text-center">{{proyecto}}</h5>
+                                <p><small>{{fecha}}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="h6">Descripcion:</p>
+                        <p class="text-muted text-justify">
+                            {{descripcion}}
+                        </p>
+                        <a href="{{repositorio}}" class="btn btn-dark btn-block mt-3">Ver repositorio</a>
+                    </div>
+                    <div class="card-footer ">
+                        <button type="button" data-toggle="modal" data-target="#editProyectoModal{{proyectos}}"
+                            class="btn btn-success px-3"><i class="fas fa-pencil-alt"></i></button>
+                        <button type="button" data-toggle="modal" data-target="#deleteProyectoModal{{id}}"
+                            class="btn btn-danger px-3"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+            {{>adminPartials/proyectosModals/editProyectoModal}}
+            {{>adminPartials/proyectosModals/deleteProyectoModal}}
+            {{else}}
+            <h4 class="text-center mt-4">NO HAY PROYECTOS REGISTRADOS<br>
+                <small>AGREGA UN NUEVO PROYECTO</small>
+            </h4>
+            {{/each}}
+        </div>
+    </div>
+</div>
+{{>adminPartials/proyectosModals/addProyectoModal}}
