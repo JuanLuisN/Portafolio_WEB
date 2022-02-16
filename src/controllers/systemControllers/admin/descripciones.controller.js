@@ -47,7 +47,7 @@ controller.deleteDescripcion = async (req, res) => {
     const { id } = req.params
     try {
         await connection.query('delete from descripciones where id = ?', [id])
-        req.flash('success_msg', 'Se elimino la descripcion con exito')
+        req.flash('success_msg', 'Se elimino la descripción con exito')
         res.redirect(redirectPath)
     } catch (error) {
         console.log(error)
