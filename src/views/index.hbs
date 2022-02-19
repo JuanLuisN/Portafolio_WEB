@@ -1,5 +1,6 @@
 {{!-- Inicio --}}
-<section>
+<div id="Inicio"></div>
+<section class="mt-5"> <br>
     <div class="card bg-dark text-white">
         {{!-- <img
             src="https://images.pexels.com/photos/3745234/pexels-photo-3745234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
@@ -16,6 +17,7 @@
         </div>
     </div>
 </section>
+<div id="AcercaDeMi"></div>
 <section>
     <div class="container-fluid my-5">
         <h2 class="text-center text-white">ACERCA DE MI</h2>
@@ -23,24 +25,22 @@
         <div class="row">
             <div class="col-md-10 mx-auto mt-3">
                 <div class="row">
+                    {{#each descripciones}}
                     <div class="col col-12 col-md-12 col-sm-12 col-lg-4 text-center mt-4">
-                        <img src="/images/Perfil.png" class="img-aboutMe">
+                        <img src="{{imagen}}" class="img-aboutMe">
                     </div>
                     <div class="col col-12 col-md-12 col-sm-12 col-lg-8 mt-4 text-white">
                         <h4>¿Quieres conocerme?</h4>
                         <hr class="bg-dark">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quia eius ducimus vitae, quasi
-                        sit
-                        labore quam rem perferendis. Voluptate repellendus voluptatibus molestias fuga quisquam corporis
-                        ab
-                        fugiat maiores quo.
+                        <p class="text-justify">{{descripcion}}</p>
                     </div>
+                    {{/each}}
                 </div>
             </div>
         </div>
     </div>
 </section>
-<hr class="bg-secondary">
+<hr class="bg-secondary" id="MisHabilidades">
 <section>
     <div class="container-fluid my-5">
         <h2 class="text-center text-white">MIS HABILIDADES</h2>
@@ -48,74 +48,62 @@
         <div class="row">
             <div class="col-md-10 mx-auto mt-3">
                 <div class="row justify-content-md-center aling-items-center p-4">
-                    {{!-- {{#each familyusers}} --}}
-                    <div class="col col-12 col-sm-12 col-md-4 col-lg-4 mb-4">
-                        <div class="card text-center h-100 rounded project-sobresalir border-secondary">
+                    {{#each habilidades}}
+                    <div class="col col-12 col-sm-12 col-md-3 col-lg-3 mb-4">
+                        <div class="card text-center h-100 rounded project-sobresalir border-secondary bg-dark text-white">
                             <div class="card-header">
-                                <img src="https://images.pexels.com/photos/3745234/pexels-photo-3745234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    class="img-card">
-                                <h5 class="font-weight-bold text-center mt-4">NodeJS</h5>
+                                <img src="{{imagen}}" class="img-card">
+                                <h5 class="font-weight-bold text-center mt-4">{{habilidad}}</h5>
                             </div>
                             <div class="card-body">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, qui. Minima
-                                maiores odio
-                                recusandae excepturi qui fuga neque possimus amet, suscipit, sunt quo nemo a
-                                pariatur sit
-                                tenetur nobis necessitatibus.
+                                <p class="text-muted">{{descripcion}}</p>
                             </div>
                         </div>
                     </div>
-                    {{!-- {{else}} --}}
-                    {{!-- <h1 class="text-center mt-4">You have no family users added<br>
-                        <small>Add a new user :D</small>
-                    </h1> --}}
-                    {{!-- {{/each}} --}}
+                    {{/each}}
                 </div>
             </div>
         </div>
     </div>
 </section>
-<hr class="bg-secondary">
+<hr class="bg-secondary" id="MisProyectos">
 <section>
     <div class="container-fluid my-5">
         <h2 class="text-center text-white">MIS PROYECTOS</h2>
         <hr class="w-75 bg-dark">
-        <div class="row justify-content-md-center aling-items-center p-4">
-            {{!-- {{#each familyusers}} --}}
-            <div class="col col-12 col-sm-12 col-md-4 col-lg-4 mb-4">
-                <div class="card text-center h-100 rounded project-sobresalir border-secondary">
-                    <div class="card-header">
-                        <div class="row d-flex align-items-center">
-                            <div class="col col-12 col-sm-12 col-md-4 col-lg-4">
-                                <img src="https://images.pexels.com/photos/3745234/pexels-photo-3745234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                    class="img-card">
+        <div class="row">
+            <div class="col-md-10 mx-auto mt-3">
+                <div class="row justify-content-md-center aling-items-center p-4">
+                    {{#each proyectos}}
+                    <div class="col col-12 col-sm-12 col-md-6 col-lg-6 mb-4">
+                        <div class="card text-center h-100 rounded project-sobresalir border-secondary bg-dark text-white">
+                            <div class="card-header">
+                                <div class="row d-flex align-items-center">
+                                    <div class="col col-12 col-sm-12 col-md-4 col-lg-4">
+                                        <img src="{{imagen}}" class="img-card">
+                                    </div>
+                                    <div class="col col-12 col-sm-12 col-md-8 col-lg-8 mt-4">
+                                        <h5 class="font-weight-bold text-center">{{proyecto}}</h5>
+                                        <p><small>{{fecha}}</small></p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col col-12 col-sm-12 col-md-8 col-lg-8 mt-4">
-                                <h5 class="font-weight-bold text-center">Proyecto bla bla bla</h5>
-                                <p><small>Desarrollado en la fecha tal</small></p>
+                            <div class="card-body text-justify">
+                                <p class="text-muted">{{descripcion}}</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="{{repositorio}}" class="btn btn-dark btn-block" target="_blank"><i class="fas fa-eye"></i> Ver
+                                    repositorio</a>
                             </div>
                         </div>
                     </div>
-                    <div class="card-body text-justify">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas pariatur adipisci vitae ipsa
-                            minima magni possimus cum corrupti. Maxime provident saepe, porro possimus molestias
-                            expedita nesciunt voluptates iure dolorum at?</p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, qui. Minima maiores odio
-                        recusandae excepturi qui fuga neque possimus amet, suscipit, sunt quo nemo a pariatur sit
-                        tenetur nobis necessitatibus.
-                        <a href="" class="btn btn-dark btn-block mt-3"><i class="fas fa-eye"></i> Ver repositorio</a>
-                    </div>
+                    {{/each}}
                 </div>
             </div>
-            {{!-- {{else}} --}}
-            {{!-- <h1 class="text-center mt-4">You have no family users added<br>
-                <small>Add a new user :D</small>
-            </h1> --}}
-            {{!-- {{/each}} --}}
         </div>
     </div>
 </section>
-<hr class="bg-secondary">
+<hr class="bg-secondary" id="Contacto">
 <section>
     <div class="container-fluid my-5">
         <h2 class="text-center text-white">CONTACTAME</h2>
@@ -124,38 +112,38 @@
             <div class="col-md-10 mx-auto mt-3">
                 <div class="row text-center">
                     <div class="col col-12 col-sm-12 col-md-2 col-lg-2 mb-4">
-                        <a href="https://github.com/JuanLuisN" class="contact-link">
+                        <a href="https://github.com/JuanLuisN" class="contact-link" target="_blank">
                             <i class="fab fa-github fa-2x"></i>
                             <p>github.com/JuanLuisN</p>
                         </a>
                     </div>
                     <div class="col col-12 col-sm-12 col-md-2 col-lg-2 mb-4">
-                        <a href="mailto:jl_noriega2000@hotmail.com" class="contact-link">
+                        <a href="mailto:jl_noriega2000@hotmail.com" class="contact-link" target="_blank">
                             <i class="fas fa-envelope fa-2x"></i>
                             <p>Correo</p>
                         </a>
                     </div>
                     <div class="col col-12 col-sm-12 col-md-2 col-lg-2 mb-4">
                         <a href="https://www.linkedin.com/in/juan-luis-noriega-g%C3%B3mez-259b60231/"
-                            class="contact-link">
+                            class="contact-link" target="_blank">
                             <i class="fab fa-linkedin fa-2x"></i>
                             <p>Linkedin</p>
                         </a>
                     </div>
                     <div class="col col-12 col-sm-12 col-md-2 col-lg-2 mb-4">
-                        <a href="https://www.instagram.com/jl._.luis/" class="contact-link">
+                        <a href="https://www.instagram.com/jl._.luis/" class="contact-link" target="_blank">
                             <i class="fab fa-instagram fa-2x"></i>
                             <p>Instagram</p>
                         </a>
                     </div>
                     <div class="col col-12 col-sm-12 col-md-2 col-lg-2 mb-4">
-                        <a href="https://www.facebook.com/profile.php?id=100077916473982" class="contact-link">
+                        <a href="https://www.facebook.com/profile.php?id=100077916473982" class="contact-link" target="_blank">
                             <i class="fab fa-facebook fa-2x"></i>
                             <p>Facebook</p>
                         </a>
                     </div>
                     <div class="col col-12 col-sm-12 col-md-2 col-lg-2 mb-4">
-                        <a href="https://twitter.com/JuanLuisKnife" class="contact-link">
+                        <a href="https://twitter.com/JuanLuisKnife" class="contact-link" target="_blank">
                             <i class="fab fa-twitter fa-2x"></i>
                             <p>Twitter</p>
                         </a>

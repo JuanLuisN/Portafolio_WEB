@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid mt-5"> <br>
     <div class="pt-4">
         <h2 class="text-center text-light">Habilidades</h2>
         <button type="button" data-toggle="modal" data-target="#addHabilidadModal"
@@ -11,20 +11,19 @@
         <div class="row justify-content-md-center aling-items-center p-4">
             {{#each habilidades}}
             <div class="col col-12 col-sm-12 col-md-4 col-lg-4 mb-4">
-                <div class="card shadow text-center h-100 rounded">
+                <div class="card shadow text-center h-100 rounded border-secondary bg-dark text-white">
                     <div class="card-header">
                         <img src="{{imagen}}"
                             class="img-card">
                         <h5 class="font-weight-bold text-center mt-4">{{habilidad}}</h5>
                     </div>
                     <div class="card-body">
-                        <p class="h6">Descripcion:</p>
                         <p class="text-muted text-justify">
                             {{descripcion}}
                         </p>
                     </div>
                     <div class="card-footer ">
-                        <button type="button" data-toggle="modal" data-target="#editHabilidadModal{{habilidades}}"
+                        <button type="button" data-toggle="modal" data-target="#editHabilidadModal{{id}}"
                             class="btn btn-success px-3"><i class="fas fa-pencil-alt"></i></button>
                         <button type="button" data-toggle="modal" data-target="#deleteHabilidadModal{{id}}"
                             class="btn btn-danger px-3"><i class="fa fa-trash" aria-hidden="true"></i></button>

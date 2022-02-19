@@ -33,17 +33,16 @@ controller.saveProyecto = async (req, res) => {
 
 controller.editProyecto = async (req, res) => {
     const { id } = req.params
-    const { imagen, proyecto, fechaInicial, fechaFinal, descripcion, repositorio } = req.body
+    const { imagen, proyecto, descripcion, repositorio } = req.body
     const newProyecto = {
         imagen,
         proyecto,
-        fecha: fechaInicial + ' | ' + fechaFinal,
         descripcion,
         repositorio
     }
     try {
-        await connection.query('update proyectos set imagen = ?, proyecto = ?, fecha = ?, descripcion = ?, repositorio = ? where id = ?', 
-            [newProyecto.imagen, newProyecto.proyecto, newProyecto.fecha, newProyecto.descripcion, newProyecto.repositorio, id])
+        await connection.query('update proyectos set imagen = ?, proyecto = ?, descripcion = ?, repositorio = ? where id = ?', 
+            [newProyecto.imagen, newProyecto.proyecto, newProyecto.descripcion, newProyecto.repositorio, id])
         req.flash('success_msg', 'Se actualizo el proyecto con exito')
         res.redirect(redirectPath)
     } catch (error) {

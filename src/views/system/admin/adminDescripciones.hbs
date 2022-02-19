@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid mt-5"> <br>
     <div class="pt-4">
         <h2 class="text-center text-light">Descripciones</h2>
         <button type="button" data-toggle="modal" data-target="#addDescripcionModal"
@@ -11,19 +11,18 @@
         <div class="row justify-content-md-center aling-items-center p-4">
             {{#each descripciones}}
             <div class="col col-12 mb-4">
-                <div class="card shadow text-center h-100 rounded">
+                <div class="card shadow text-center h-100 rounded border-secondary bg-dark text-white">
                     <div class="card-header">
                         <img src="{{imagen}}"
                                     class="img-card">
                     </div>
                     <div class="card-body">
-                        <p class="h6">Descripcion:</p>
                         <p class="text-muted text-justify">
                             {{descripcion}}
                         </p>
                     </div>
                     <div class="card-footer ">
-                        <button type="button" data-toggle="modal" data-target="#editDescripcionModal{{descripciones}}"
+                        <button type="button" data-toggle="modal" data-target="#editDescripcionModal{{id}}"
                             class="btn btn-success px-3"><i class="fas fa-pencil-alt"></i></button>
                         <button type="button" data-toggle="modal" data-target="#deleteDescripcionModal{{id}}"
                             class="btn btn-danger px-3"><i class="fa fa-trash" aria-hidden="true"></i></button>
